@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: penting supaya tampilan responsive di HP -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GudangKu - Beranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER & NAVIGASI ============ -->
+  <header>
+    <div class="navbar">
+      <!-- Logo aplikasi pakai tag <img> -->
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Logo GudangKu">
+        Gudang<span>Ku</span>
+      </a>
+      <!-- Menu navigasi pakai <nav>, <ul>, dan <li> -->
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li><a href="transaksi.html">Transaksi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ KONTEN UTAMA ============ -->
+  <main class="container">
+
+    <!-- Bagian Hero -->
+    <section class="hero">
+      <span class="badge">📦 Kelola stok gudang lebih rapi</span>
+      <h1>Pantau stok barang gudangmu jadi gampang.</h1>
+      <p>GudangKu membantu kamu mencatat barang masuk, mengelompokkan kategori, dan memantau stok yang mulai menipis.</p>
+      <a href="transaksi.html" class="btn">Mulai Tambah Barang</a>
+    </section>
+
+    <!-- Strip ringkasan stok -->
+    <section class="stats">
+      <div class="stat">
+        <div class="angka">128</div>
+        <div class="label">Total Barang</div>
+      </div>
+      <div class="stat warn">
+        <div class="angka">5</div>
+        <div class="label">Stok Menipis</div>
+      </div>
+      <div class="stat">
+        <div class="angka">4</div>
+        <div class="label">Kategori</div>
+      </div>
+    </section>
+
+    <!-- Langkah menggunakan aplikasi -->
+    <h2 class="section-title">Cara Menggunakan Aplikasi</h2>
+    <p class="section-sub">Ikuti 3 langkah mudah berikut untuk mulai mengelola stok.</p>
+
+    <section class="steps">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Login Dulu</h3>
+        <p>Masuk ke halaman Login dan isi email serta password untuk mulai menggunakan aplikasi.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Tambah Barang</h3>
+        <p>Buka halaman Transaksi, isi nama barang, jumlah stok, dan kategori, lalu tekan Simpan.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Pantau Stok</h3>
+        <p>Semua barang tampil dalam tabel lengkap dengan status stok: aman, menipis, atau habis.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    © 2025 GudangKu — Aplikasi Pencatat Stok Gudang Sederhana.
+  </footer>
+
+</body>
+</html>

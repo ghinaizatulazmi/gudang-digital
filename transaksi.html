@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GudangKu - Transaksi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER & NAVIGASI ============ -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Logo GudangKu">
+        Gudang<span>Ku</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="transaksi.html" class="active">Transaksi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ KONTEN UTAMA ============ -->
+  <main class="container">
+
+    <!-- Kotak form tambah barang -->
+    <div class="form-box">
+      <h2>Tambah Stok Barang</h2>
+      <p class="desc">Isi semua kolom di bawah ini, lalu tekan tombol Simpan.</p>
+
+      <!-- Pesan sukses (disembunyikan, muncul lewat JavaScript) -->
+      <div class="sukses" id="pesan-sukses">✅ Barang berhasil disimpan!</div>
+
+      <!-- onsubmit="return validasiBarang()" -> jalankan validasi saat form dikirim -->
+      <form onsubmit="return validasiBarang()">
+
+        <div class="form-group">
+          <label for="nama">Nama Barang</label>
+          <input type="text" id="nama" placeholder="Contoh: Kabel USB Type-C">
+          <span class="error" id="error-nama">Nama barang wajib diisi.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="jumlah">Jumlah Stok</label>
+          <input type="number" id="jumlah" placeholder="Contoh: 50">
+          <span class="error" id="error-jumlah">Jumlah stok wajib diisi.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="kategori">Kategori</label>
+          <select id="kategori">
+            <option value="">-- Pilih Kategori --</option>
+            <option value="elektronik">Elektronik</option>
+            <option value="pakaian">Pakaian</option>
+            <option value="makanan">Makanan</option>
+            <option value="atk">Alat Tulis</option>
+          </select>
+          <span class="error" id="error-kategori">Kategori wajib dipilih.</span>
+        </div>
+
+        <button type="submit" class="btn">Simpan Barang</button>
+      </form>
+
+      <!-- Link menuju halaman Daftar Stok Barang -->
+      <p class="link-bawah">Mau lihat semua barang? <a href="daftar-stok.html">Lihat Daftar Stok →</a></p>
+    </div>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    © 2025 GudangKu — Aplikasi Pencatat Stok Gudang Sederhana.
+  </footer>
+
+  <!-- Panggil file JavaScript untuk validasi -->
+  <script src="script.js"></script>
+</body>
+</html>

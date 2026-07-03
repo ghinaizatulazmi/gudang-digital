@@ -1,0 +1,596 @@
+/* ============================================
+   GudangKu - style.css
+   File CSS ini dipakai oleh SEMUA halaman.
+   Komentar pakai bahasa Indonesia biar gampang dijelasin.
+   ============================================ */
+
+/* Ambil font dari Google Fonts (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ---- Variabel warna ----
+   Warna disimpan di sini biar gampang diganti dalam 1 tempat */
+:root {
+  --hijau: #059669;
+  --hijau-muda: #10B981;
+  --hijau-tua: #047857;
+  --amber: #F59E0B;
+  --bg: #F3F6F4;
+  --putih: #FFFFFF;
+  --teks: #14241D;
+  --abu: #647A70;
+  --merah: #E11D48;
+  --garis: #E3EBE7;
+  --shadow: 0 12px 30px rgba(20, 36, 29, 0.07);
+}
+
+/* ---- Reset dasar ----
+   Hapus margin & padding bawaan browser, ukuran box jadi rapi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--teks);
+  line-height: 1.6;
+}
+
+/* Kontainer pembungkus biar konten tidak terlalu lebar */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================
+   HEADER & NAVIGASI
+   ============================================ */
+header {
+  background-color: var(--putih);
+  border-bottom: 1px solid var(--garis);
+  position: sticky;   /* navbar nempel di atas saat di-scroll */
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;                  /* logo & menu sejajar */
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Bagian logo (gambar + tulisan) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logo img {
+  width: 38px;
+  height: 38px;
+}
+
+.logo span {
+  color: var(--hijau);
+}
+
+/* Daftar menu navigasi */
+nav ul {
+  list-style: none;     /* hilangkan titik bullet */
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: var(--abu);
+  transition: 0.2s;     /* animasi halus saat hover */
+}
+
+nav ul li a:hover {
+  background-color: var(--bg);
+  color: var(--hijau);
+}
+
+/* Menu yang sedang aktif (halaman yang dibuka) */
+nav ul li a.active {
+  background-color: var(--hijau);
+  color: var(--putih);
+}
+
+/* Tombol login khusus di navbar */
+nav ul li a.btn-login {
+  background-color: var(--hijau);
+  color: var(--putih);
+}
+
+nav ul li a.btn-login:hover {
+  background-color: var(--hijau-tua);
+  color: var(--putih);
+}
+
+/* ============================================
+   TOMBOL
+   ============================================ */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--hijau-muda), var(--hijau));
+  color: var(--putih);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);   /* tombol naik sedikit saat disentuh */
+  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
+}
+
+.btn-amber {
+  background: linear-gradient(135deg, #FBBF24, var(--amber));
+}
+
+.btn-amber:hover {
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.35);
+}
+
+/* ============================================
+   HERO (bagian atas halaman beranda)
+   ============================================ */
+.hero {
+  background: linear-gradient(135deg, var(--hijau-muda), var(--hijau-tua));
+  color: var(--putih);
+  border-radius: 24px;
+  padding: 56px 40px;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Lingkaran dekorasi di pojok hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -80px;
+  right: -60px;
+}
+
+.hero .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  max-width: 560px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  font-size: 17px;
+  opacity: 0.92;
+  max-width: 480px;
+  margin-bottom: 26px;
+}
+
+.hero .btn {
+  background: var(--putih);
+  color: var(--hijau-tua);
+}
+
+/* ============================================
+   STRIP RINGKASAN STOK (kotak angka di beranda)
+   ============================================ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.stat {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
+}
+
+.stat .angka {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--hijau);
+}
+
+.stat .label {
+  color: var(--abu);
+  font-size: 14px;
+}
+
+.stat.warn .angka { color: var(--amber); }
+
+/* ============================================
+   JUDUL BAGIAN
+   ============================================ */
+.section-title {
+  text-align: center;
+  margin: 56px 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--abu);
+  margin-bottom: 36px;
+}
+
+/* ============================================
+   KARTU LANGKAH (cara pakai aplikasi)
+   ============================================ */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 kolom sejajar */
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card .num {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--hijau-muda), var(--hijau));
+  color: var(--putih);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--abu);
+  font-size: 15px;
+}
+
+/* ============================================
+   FORM (halaman transaksi & login)
+   ============================================ */
+.form-box {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: var(--shadow);
+  max-width: 520px;
+  margin: 40px auto;
+}
+
+.form-box h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.form-box .desc {
+  color: var(--abu);
+  margin-bottom: 26px;
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--garis);
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--bg);
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--hijau);
+  background: var(--putih);
+}
+
+/* Tulisan error merah di bawah input (muncul lewat JavaScript) */
+.error {
+  color: var(--merah);
+  font-size: 13px;
+  margin-top: 5px;
+  display: none;      /* disembunyikan dulu, ditampilkan saat input kosong */
+}
+
+/* Kotak pesan sukses (muncul lewat JavaScript) */
+.sukses {
+  display: none;
+  background: #E7F8EE;
+  color: var(--hijau);
+  border: 1px solid #BBE9CC;
+  padding: 12px 16px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.form-box .btn {
+  width: 100%;
+}
+
+.link-bawah {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--abu);
+  font-size: 14px;
+}
+
+.link-bawah a {
+  color: var(--hijau);
+  font-weight: 600;
+}
+
+/* ============================================
+   TABEL (halaman daftar stok)
+   ============================================ */
+.table-wrap {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;        /* biar sudut tabel ikut melengkung */
+  margin: 30px 0 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;   /* gabungkan garis tabel */
+}
+
+thead {
+  background: linear-gradient(135deg, var(--hijau-muda), var(--hijau));
+  color: var(--putih);
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--garis);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--bg);
+}
+
+/* Label kategori berwarna */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tag-elektronik { background: #E9F0FF; color: #2563EB; }
+.tag-pakaian { background: #F3E9FF; color: #7C3AED; }
+.tag-makanan { background: #FFF0E9; color: #E8590C; }
+.tag-atk { background: #E9FBF3; color: #047857; }
+
+/* Label status stok */
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-aman { background: #E7F8EE; color: #16A34A; }
+.status-menipis { background: #FEF3DA; color: #B45309; }
+.status-habis { background: #FFE9EF; color: #DB2777; }
+
+.jumlah {
+  font-weight: 600;
+}
+
+/* ============================================
+   HALAMAN PROFIL
+   ============================================ */
+.profil-box {
+  background: var(--putih);
+  border: 1px solid var(--garis);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  margin: 40px 0;
+}
+
+.profil-box h2 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.profil-box p {
+  color: var(--abu);
+  margin-bottom: 16px;
+}
+
+.fitur-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fitur-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--bg);
+  padding: 16px;
+  border-radius: 13px;
+}
+
+.fitur-item .ikon {
+  font-size: 22px;
+}
+
+.fitur-item h4 {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.fitur-item p {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ============================================
+   HALAMAN LOGIN (latar gradient penuh)
+   ============================================ */
+.login-page {
+  min-height: calc(100vh - 71px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--hijau-muda), var(--hijau-tua));
+  padding: 30px 20px;
+}
+
+.login-page .form-box {
+  margin: 0;
+  width: 100%;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--putih);
+  border-top: 1px solid var(--garis);
+  padding: 26px 20px;
+  text-align: center;
+  color: var(--abu);
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* ============================================
+   RESPONSIVE / MEDIA QUERY
+   Aturan di bawah ini jalan saat layar <= 768px (HP / tablet)
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Navbar: logo & menu jadi menumpuk ke bawah */
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;          /* menu pindah baris kalau penuh */
+    justify-content: center;
+  }
+
+  /* Hero jadi lebih kecil */
+  .hero {
+    padding: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  /* Strip ringkasan, kartu langkah & fitur jadi 1 kolom (menumpuk) */
+  .stats,
+  .steps,
+  .fitur-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Kotak form & profil padding lebih kecil */
+  .form-box,
+  .profil-box {
+    padding: 26px;
+  }
+
+  /* Tabel: tulisan & padding diperkecil biar muat */
+  th, td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

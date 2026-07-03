@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GudangKu - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER & NAVIGASI ============ -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Logo GudangKu">
+        Gudang<span>Ku</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="transaksi.html">Transaksi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ KONTEN UTAMA (latar gradient) ============ -->
+  <main class="login-page">
+
+    <div class="form-box">
+      <h2>Selamat Datang 👋</h2>
+      <p class="desc">Masuk untuk mulai mengelola stok gudangmu.</p>
+
+      <!-- Pesan sukses (muncul lewat JavaScript) -->
+      <div class="sukses" id="pesan-sukses">✅ Login berhasil!</div>
+
+      <form onsubmit="return validasiLogin()">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="contoh@email.com">
+          <span class="error" id="error-email">Email wajib diisi.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Masukkan password">
+          <span class="error" id="error-password">Password wajib diisi.</span>
+        </div>
+
+        <button type="submit" class="btn">Masuk</button>
+      </form>
+
+      <p class="link-bawah">Belum punya akun? <a href="#">Daftar di sini</a></p>
+    </div>
+
+  </main>
+
+  <!-- Panggil file JavaScript untuk validasi -->
+  <script src="script.js"></script>
+</body>
+</html>

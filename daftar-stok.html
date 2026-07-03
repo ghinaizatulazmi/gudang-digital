@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GudangKu - Daftar Stok</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER & NAVIGASI ============ -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Logo GudangKu">
+        Gudang<span>Ku</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="transaksi.html" class="active">Transaksi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ KONTEN UTAMA ============ -->
+  <main class="container">
+
+    <h2 class="section-title" style="text-align:left; margin-top:40px;">Daftar Stok Barang</h2>
+    <p class="section-sub" style="text-align:left;">Berikut adalah daftar barang yang ada di gudang.</p>
+
+    <!-- Tabel daftar stok -->
+    <div class="table-wrap">
+      <table>
+        <!-- Kepala tabel -->
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Barang</th>
+            <th>Jumlah Stok</th>
+            <th>Kategori</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <!-- Isi tabel (data contoh) -->
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Kabel USB Type-C</td>
+            <td class="jumlah">50</td>
+            <td><span class="tag tag-elektronik">Elektronik</span></td>
+            <td><span class="status status-aman">Aman</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kaos Polos Hitam</td>
+            <td class="jumlah">8</td>
+            <td><span class="tag tag-pakaian">Pakaian</span></td>
+            <td><span class="status status-menipis">Menipis</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Kopi Sachet</td>
+            <td class="jumlah">120</td>
+            <td><span class="tag tag-makanan">Makanan</span></td>
+            <td><span class="status status-aman">Aman</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Pulpen Hitam</td>
+            <td class="jumlah">0</td>
+            <td><span class="tag tag-atk">Alat Tulis</span></td>
+            <td><span class="status status-habis">Habis</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Powerbank 10000mAh</td>
+            <td class="jumlah">15</td>
+            <td><span class="tag tag-elektronik">Elektronik</span></td>
+            <td><span class="status status-aman">Aman</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a href="transaksi.html" class="btn btn-amber">+ Tambah Barang Baru</a>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    © 2025 GudangKu — Aplikasi Pencatat Stok Gudang Sederhana.
+  </footer>
+
+</body>
+</html>
